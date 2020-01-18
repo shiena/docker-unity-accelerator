@@ -1,0 +1,13 @@
+FROM alpine:3.11
+RUN wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \
+&& wget -O /tmp/glibc-2.30-r0.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk \
+&& wget -O /tmp/unity-accelerator-linux-installer.run https://unity-accelerator-prd.storage.googleapis.com/unity-accelerator-linux-installer.run \
+&& apk --no-cache add ca-certificates /tmp/glibc-2.30-r0.apk \
+&& chmod +x /tmp/unity-accelerator-linux-installer.run \
+&& /tmp/unity-accelerator-linux-installer.run \
+ --mode unattended \
+ --enable-collab false \
+&& rm /etc/apk/keys/sgerrand.rsa.pub /tmp/glibc-2.30-r0.apk /tmp/unity-accelerator-linux-installer.run
+EXPOSE 10080 80
+VOLUME ["/root/.config/unity-accelerator"]
+CMD ["/opt/Unity/accelerator/unity-accelerator-launch", "-fg", "start"]
