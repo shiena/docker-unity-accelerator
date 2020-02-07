@@ -9,7 +9,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.v2
-    image: unity-accelerator.v2:v1.0.54
+    image: unity-accelerator:v2
     volumes:
       - unity-accelerator.v2-volume:/root/.config/unity-accelerator
     ports:
