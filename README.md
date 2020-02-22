@@ -28,3 +28,9 @@ docker-compose -f dokcer-compose.yml -f v1_2.yml -p v1_v2 up -d
 # Show version
 docker run --rm unity-accelerator:v1_v2 /opt/Unity/accelerator/unity-accelerator --version
 ```
+
+## Additional Services
+
+- Grafana: http://localhost:3000/
+    - default admin user is admin/admin
+- Prometheus: http://localhost:9090/
