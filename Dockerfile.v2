@@ -7,6 +7,7 @@ RUN wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sger
 && /tmp/unity-accelerator-linux-installer.run \
  --mode unattended \
  --enable-collab false \
+&& /tmp/unity-accelerator-linux-installer.run --version \
 && rm /etc/apk/keys/sgerrand.rsa.pub /tmp/glibc-2.30-r0.apk /tmp/unity-accelerator-linux-installer.run
 EXPOSE 10080 80
 VOLUME ["/root/.config/unity-accelerator"]
