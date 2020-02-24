@@ -14,3 +14,4 @@ services:
       - unity-accelerator.v2-volume:/root/.config/unity-accelerator
     ports:
       - "10080:10080"
+      - "8080:80"

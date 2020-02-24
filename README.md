@@ -29,6 +29,9 @@ docker-compose -f dokcer-compose.yml -f v1_2.yml -p v1_v2 up -d
 docker run --rm unity-accelerator:v1_v2 /opt/Unity/accelerator/unity-accelerator --version
 ```
 
+- Metrics reports: http://localhost:8080/metrics
+- Health page: http://localhost:8080/api/health-agent
+
 ## Additional Services
 
 - Grafana: http://localhost:3000/
