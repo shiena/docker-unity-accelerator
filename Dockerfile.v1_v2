@@ -4,7 +4,8 @@ RUN wget -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sger
 && wget -O /tmp/unity-accelerator-linux-installer.run https://unity-accelerator-prd.storage.googleapis.com/unity-accelerator-linux-installer.run \
 && apk --no-cache add ca-certificates /tmp/glibc-2.30-r0.apk \
 && chmod +x /tmp/unity-accelerator-linux-installer.run \
-&& printf '\n\ny\n\n\n\n\n\n\n\n\n\n\n\n' | /tmp/unity-accelerator-linux-installer.run \
+&& /tmp/unity-accelerator-linux-installer.run \
+ --mode unattended \
  --enable-collab false \
  --enable-legacy true \
 && /tmp/unity-accelerator-linux-installer.run --version \
