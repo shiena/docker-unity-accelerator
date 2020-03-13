@@ -1,12 +1,22 @@
 version: '3'
 
 volumes:
+  accelerator-volume:
+    driver: 'local'
   prometheus-volume:
     driver: 'local'
   grafana-volume:
     driver: 'local'
 
 services:
+  accelerator:
+    image: unitytechnologies/accelerator
+    volumes:
+      - accelerator-volume:/agent
+    ports:
+      - "10080:10080"
+      - "8080:80"
+      - "443:443"
   prometheus:
     image: prom/prometheus
     volumes:
