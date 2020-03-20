@@ -26,6 +26,8 @@ services:
       - prometheus-volume:/prometheus
     ports:
       - "9090:9090"
+    depends_on:
+      - accelerator
   grafana:
     image: grafana/grafana
     volumes:
@@ -33,3 +35,5 @@ services:
       - grafana-volume:/var/lib/grafana
     ports:
       - "3000:3000"
+    depends_on:
+      - prometheus
