@@ -13,6 +13,8 @@ services:
     image: unitytechnologies/accelerator
     volumes:
       - accelerator-volume:/agent
+    env_file:
+      - ./accelerator.env
     ports:
       - "10080:10080"
       - "8080:80"

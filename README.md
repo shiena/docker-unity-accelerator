@@ -1,6 +1,17 @@
 # docker-unity-accelerator
 Docker images for Unity Accelerator with Prometheus and Grafana
 
+## Environment variables
+
+`accelerator.env` example
+
+```
+COLLAB_REGISTRATION_TOKEN=ft0bJvbRD
+DISABLE_USAGE_STATS=yes
+```
+
+see also https://hub.docker.com/r/unitytechnologies/accelerator
+
 ## Usage
 
 ```
