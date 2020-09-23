@@ -10,7 +10,9 @@ COLLAB_REGISTRATION_TOKEN=ft0bJvbRD
 DISABLE_USAGE_STATS=yes
 ```
 
-see also https://hub.docker.com/r/unitytechnologies/accelerator
+see also
+- https://hub.docker.com/r/unitytechnologies/accelerator
+- https://docs.unity3d.com/Manual/UnityAccelerator.html#docker
 
 ## Usage
 
