@@ -27,6 +27,14 @@ docker-compose up -d
 - Metrics reports: http://localhost:8080/metrics
 - Health page: http://localhost:8080/api/health-agent
 
+## Configuring dashboard account and password through command line
+Go into accelerator container by executing `sh` inside it and run `unity-accelerator` in folder `/agent`.
+```
+sudo docker-compose exec accelerator sh
+cd /agent
+unity-accelerator dashboard password admin
+```
+
 ## Additional Services
 
 - Grafana: http://localhost:3000/
