@@ -19,6 +19,8 @@ services:
       - "10080:10080"
       - "8080:80"
       - "443:443"
+    healthcheck:
+        test: /bin/bash -c "echo > /dev/tcp/127.0.0.1/80" || exit 1
   prometheus:
     image: prom/prometheus
     volumes:
@@ -27,7 +29,10 @@ services:
     ports:
       - "9090:9090"
     depends_on:
-      - accelerator
+        accelerator:
+            condition: service_healthy
+    healthcheck:
+        test: netstat -t -n -l | grep -E '^tcp' | awk '{print $$4}' | grep :9090
   grafana:
     image: grafana/grafana
     volumes:
@@ -36,4 +41,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - prometheus
+        prometheus:
+            condition: service_healthy
+    healthcheck:
+        test: /bin/bash -c "echo > /dev/tcp/127.0.0.1/3000" || exit 1
