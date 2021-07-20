@@ -32,7 +32,7 @@ services:
         accelerator:
             condition: service_healthy
     healthcheck:
-        test: netstat -t -n -l | grep -E '^tcp' | awk '{print $$4}' | grep :9090
+        test: netstat -t -n -l | awk '/^tcp6? /{print $$4}' | grep -q -E ':9090$$'
   grafana:
     image: grafana/grafana
     volumes:
